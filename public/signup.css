@@ -1,0 +1,23 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('./images/black-hexagon-honeycomb.avif');
+    background-size: cover;
+    color: #fff;
+}
+a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 20px;
+}
+a:hover {
+    text-decoration: underline;
+}
