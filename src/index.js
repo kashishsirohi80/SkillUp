@@ -63,12 +63,14 @@ app.post('/signup', async (req, res) => {
 
         // Save user to the database
         const newUser = await collection.create(user);
-        console.log("New User Registered Successfully...\n");
+        console.log("New User Registered Successfully...");
         console.log("New User Details:- \n", user);
         console.log(`${user.username} logged in successfully ...\n`);
+        
+        return res.status(201).send(`${user.username} logged in successfully ...\n`);
 
         // Redirect to home after signup
-        res.status(201).redirect('/home');
+        // res.status(201).redirect('/home');
 
     } catch (error) {
         console.error('Error during user registration:', error);
@@ -79,31 +81,32 @@ app.post('/signup', async (req, res) => {
 // login user
 app.post('/login', async (req, res) => {
     const user = {
-        username: req.body.usernameoremail,
+        usernameoremail: req.body.usernameoremail,
         password: req.body.password
     };
     try {
-        const logindata = await collection.findOne({
+        const existingUser = await collection.findOne({
             $or: [
-                { username: user.username },
-                { email: user.username }
+                { username: user.usernameoremail },
+                { email: user.usernameoremail }
             ]
         });
 
-        if (!logindata) {
+        if (!existingUser) {
             return res.status(400).send("Invalid Username Or Email ...");
         }
 
-        const isPasswordValid = await bcrypt.compare(user.password, logindata.password);
+        const isPasswordValid = await bcrypt.compare(user.password, existingUser.password);
         if (!isPasswordValid) {
             return res.status(400).send('Invalid Password ...');
         }
 
-        // console.log("User Details:- \n", user);
-        console.log(`${user.username} logged in successfully ...\n`);
+        console.log(`${existingUser.username} logged in successfully ...\n`);
+
+        return res.status(201).send(`${existingUser.username} logged in successfully ...\n`);
 
         // Redirect to home after login
-        res.status(201).redirect('/home');
+        // res.status(201).redirect('/home');
 
     } catch (error) {
         console.error('Error during user login:', error);
@@ -111,7 +114,7 @@ app.post('/login', async (req, res) => {
     }
 });
 
-const port = 5000;
+const port = 1104;
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
 });
