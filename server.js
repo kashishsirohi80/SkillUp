@@ -1,3 +1,6 @@
+// Load environment variables from .env file
+require('dotenv').config();
+
 const express = require('express');
 const bcrypt = require('bcrypt');
 const mongoose = require('mongoose');
@@ -56,7 +59,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/dashboard', (req, res) => {
-    res.render('dashboard', { username: 'omsh888' });
+    res.render('dashboard', { username: 'omsh00117' });
 });
 
 app.get('/home', (req, res) => {
@@ -134,7 +137,8 @@ app.post('/login', async (req, res) => {
             return res.status(400).send('Invalid Password.');
         }
 
-        console.log(`${existingUser.username} logged in successfully.`);
+        console.log(`${existingUser.username} logged in successfully ...\n`);
+
         return res.status(200).send(`${existingUser.username} logged in successfully.`);
 
         // Redirect to home after login
@@ -147,7 +151,7 @@ app.post('/login', async (req, res) => {
 });
 
 // Start the Server
-const port = 1104;
+const port = process.env.PORT || 3000;
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
 });
