@@ -8,15 +8,30 @@ const path = require('path');
 
 const app = express();
 
-// Database Connection
-const connect = mongoose.connect("mongodb://localhost:27017/SkillUp");
-connect
-    .then(() => {
-        console.log("Database connected successfully ...\n");
-    })
-    .catch(() => {
-        console.log("Database cannot be connected ...\n");
-    });
+// Middleware to parse JSON and URL-encoded data
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+
+// MongoDB Atlas Connection
+const connectDB = async () => {
+    try {
+        await mongoose.connect(process.env.MONGODB_ATLAS_URI);
+        console.log('MongoDB Atlas connected successfully...\n');
+    } catch (error) {
+        console.error('Error while connecting to MongoDB Atlas:', error);
+        process.exit(1);
+    }
+};
+connectDB();
+
+// mongoose
+//     .connect(process.env.MONGODB_ATLAS_URI)
+//     .then(() => {
+//         console.log('MongoDB Compass connected successfully...\n');
+//     })
+//     .catch((error) => {
+//         console.error('Error connecting to MongoDB compass:', error);
+//     });
 
 // Create a Schema
 const loginschema = new mongoose.Schema({
@@ -42,10 +57,6 @@ const loginschema = new mongoose.Schema({
 
 // Create a Model
 const collection = mongoose.model("logincredentials", loginschema);
-
-// Middleware to parse JSON and URL-encoded data
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
 
 // Set the view engine to EJS
 app.set('view engine', 'ejs');
