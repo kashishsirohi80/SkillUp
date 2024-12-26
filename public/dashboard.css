@@ -3,17 +3,19 @@
     padding: 0px;
     box-sizing: border-box;
 }
+html {
+    height: 100vh;
+}
 
 body {
     font-family: 'Montserrat', sans-serif;
-    margin: 0;
-    padding: 0;
     background-color: rgb(48, 35, 35);
-    /* background: url('./images/SU3.gif'); */
+    background: url('./images/dark-street-background.avif');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     color: #333;
+    height: 100%;
 }
 
 /* navbar start */
@@ -44,6 +46,7 @@ header .logo {
 .navbar > a {
     color: rgb(224, 138, 144);
     font-size: 1rem;
+    font-weight: bolder;
     text-decoration: none;
 }
 
@@ -57,12 +60,58 @@ header .logo {
 .loggedinuser > h3 {
     color: white;
 }
-
 /* navbar end */
 
-.section {
-    height: 70vh;
+/* dashboard start */
+.dashboard {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 1rem 2rem;
+    background: rgb(127, 128, 180, 0.2);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    color: #e2d8d8;
 }
+
+.dashboard h1 {
+    margin: 1rem auto;
+}
+
+.dashboard-section {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-bottom: 0rem;
+}
+
+.card {
+    flex: 1;
+    /* background: #553838; */
+    padding: 2rem;
+    border-radius: 8px;
+    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+}
+
+.card h2 {
+    margin-bottom: 1rem;
+}
+
+.progress-bar {
+    background: #dac3c3;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    height: 20px;
+    margin: 1rem 0;
+}
+
+.progress-bar-inner {
+    height: 100%;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    width: 70%; 
+    transition: width 0.3s ease;
+}
+/* dashboard end */
 
 /* footer start */
 .footer {

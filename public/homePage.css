@@ -3,6 +3,9 @@
     padding: 0px;
     box-sizing: border-box;
 }
+html {
+    height: 100vh;
+}
 
 body {
     font-family: 'Montserrat', sans-serif;
@@ -12,6 +15,7 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     color: #333;
+    height: 100%;
 }
 
 header {
@@ -39,8 +43,9 @@ header .logo {
     gap: 1rem;
 }
 .navbar > a {
-    color: rgb(228, 193, 196);
+    color: rgb(226, 194, 196);
     font-size: 1rem;
+    font-weight: bolder;
     text-decoration: none;
 }
 

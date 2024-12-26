@@ -41,8 +41,9 @@ header .logo {
 }
 
 .navbar>a {
-    color: rgb(224, 138, 144);
+    color: rgb(226, 194, 196);
     font-size: 1rem;
+    font-weight: bolder;
     text-decoration: none;
 }
 

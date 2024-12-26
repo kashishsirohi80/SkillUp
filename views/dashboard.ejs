@@ -1,31 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SkillUp - Level Up Your Skills</title>
+    <link rel="shortcut icon" href="/images/android-chrome-512x512.png" type="image/x-icon">
     <link rel="stylesheet" href="/dashboard.css">
 </head>
+
 <body>
     <header>
         <div class="logo">SkillUp</div>
         <div class="pages">
             <div class="navbar">
-                <a href="/games" class = "underline">Games</a>
-                <a href="/about" class = "underline">About</a>
-                <a href="/contact" class = "underline">Contact Us</a>
-                <a href="/homePage" class = "underline">SignOut</a>
+                <a href="/games" class="underline">Games</a>
+                <a href="/about" class="underline">About</a>
+                <a href="/contact" class="underline">Contact Us</a>
+                <a href="/homePage" class="underline">SignOut</a>
             </div>
             <div class="loggedinuser">
-                <h3 id="loggedinuser"><%= loggedinuser %></h3>
+                <h3 id="loggedinuser">
+                    <%= loggedinuser %>
+                </h3>
             </div>
         </div>
     </header>
 
-    <div class="section"></div>
-   
+    <div class="dashboard">
+        <h1>Welcome to Your Dashboard, <%= loggedinuser %>!</h1>
+        <div class="dashboard-section">
+            <div class="card">
+                <h2>Favorite Games</h2>
+                <ul>
+                    <li>Brain Teaser</li>
+                    <li>Skill Warz</li>
+                    <li>Star Blast</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h2>Individual Score</h2>
+                <p>Your Score: <strong>85</strong></p>
+            </div>
+        </div>
+        <div class="dashboard-section">
+            <div class="card">
+                <h2>Your Progress</h2>
+                <div class="progress-bar">
+                    <div class="progress-bar-inner"></div>
+                </div>
+                <p>70%</p>
+            </div>
+        </div>
+    </div>
+
     <div class="footer">
         <p>&copy; 2024 SkillUp. <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
     </div>
 </body>
+
 </html>

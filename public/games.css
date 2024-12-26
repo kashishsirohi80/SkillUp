@@ -17,16 +17,17 @@ body {
 /* navbar start */
 
 header {
-    padding: 1rem 2rem;
+    padding: 1rem 2rem 1rem 0rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-header .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: rgb(224, 138, 144);
+.logo > img { 
+  width: 200px;
+  position: absolute;
+  top: -1.5rem;
+  left: 1rem;
 }
 
 .pages {
@@ -40,8 +41,9 @@ header .logo {
     gap: 1rem;
 }
 .navbar > a {
-    color: rgb(224, 138, 144);
+    color: rgb(226, 194, 196);
     font-size: 1rem;
+    font-weight: bolder;
     text-decoration: none;
 }
 
