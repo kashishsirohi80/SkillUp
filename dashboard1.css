@@ -1,0 +1,210 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* html,
+body {
+    background-color: #423e3e;
+    background-image: url('./images/black-hexagon-honeycomb.avif');
+} */
+
+/* Body styling */
+body {
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background-image: url('./images/dark-street-background.avif');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    /* min-height: 100vh; */
+}
+
+/* Navbar styling */
+.navbar {
+    /* background-color: #333; */
+    color: #fff;
+    padding: 1em;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.navbar .logo {
+    font-size: 2em;
+    font-weight: bold;
+    /* margin-left: 20px; */
+}
+
+.navbar .nav-links {
+    list-style: none;
+    display: flex;
+    /* justify-content: space-evenly; */
+    /* align-items: center; */
+}
+
+.navbar .nav-links li {
+    margin-left: 15px;
+}
+
+.navbar .nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1em;
+}
+
+.navbar .nav-links a:hover {
+    text-decoration: underline;
+}
+
+#loggedinuser {
+    color: #fff;
+    padding: 0px 20px;
+    text-align: center;
+    position: fixed;
+    top: 40px;
+    right: 40px;
+}
+
+/* Style for the container box */
+#container {
+    height: 550px;
+    color: #fff;
+    font-size: 80px;
+    padding-bottom: 7rem;
+}
+
+.outbox {
+    display: flex;
+    height: 50%;
+}
+
+.site {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    /* position: relative; */
+}
+
+
+#downdiv {
+    margin: 0px auto;
+    width: 50%;
+    text-align: center;
+    justify-content: space-evenly;
+}
+
+.letters {
+    /* background-color: #ddc5c5; */
+    cursor: pointer;
+    position: relative;
+    transition: transform 2s ease, left 2s ease, top 2s ease;
+}
+
+/* Main menu styling */
+.menu {
+    text-align: center;
+    background-color: #080707;
+    background-image: url('./images/black-hexagon-honeycomb.avif');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    padding-top: 2em;
+    padding-bottom: 0.1em;
+}
+
+.menu>.game-cards {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    /* margin-top: 400px; */
+}
+
+iframe {
+    border-radius: 1em;
+    width: 334px;
+    height: 200px;
+    /* border: 2px dashed white; */
+}
+
+.iframebutton {
+    padding: 2px 5px 2px 5px;
+    margin-top: 5px;
+    background-color: rgb(97, 91, 92);
+    color: #fff;
+}
+
+.card {
+    border-radius: 8px;
+    width: 400px;
+    height: 250px;
+    text-align: center;
+    margin: 1rem 0px;
+}
+
+.card h3 {
+    color: #fff;
+    margin: 0.5em auto;
+}
+
+.card p {
+    font-size: 0.9em;
+    color: #666;
+    text-align: center;
+}
+
+.aboutdiv {
+    background-color: #f7e2d7;
+    color: rgb(70, 60, 60);
+    text-align: left;
+    padding: 20px;
+    border-radius: 1em;
+    margin: 1.5em;
+}
+
+.aboutdiv>h2 {
+    margin-bottom: .5em;
+}
+
+/* Footer styling */
+.footer {
+    background-color: #252222;
+    color: #fff;
+    text-align: center;
+    padding: 1.5em 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer .footer-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.footer p {
+    margin-bottom: 1em;
+    font-size: 0.9em;
+}
+
+.footer .footer-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1.5em;
+}
+
+.footer .footer-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.9em;
+}
+
+.footer .footer-links a:hover {
+    text-decoration: underline;
+}

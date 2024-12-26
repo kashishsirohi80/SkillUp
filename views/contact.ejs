@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Skill Up</title>
+    <link rel="stylesheet" href="/contact.css">
+</head>
+<body>
+    <header>
+        <div class="logo">SkillUp</div>
+        <div class="pages">
+            <div class="navbar">
+                <a href="/dashboard" class="underline">Dashboard</a>
+                <a href="/games" class="underline">Games</a>
+                <a href="/about" class="underline">About</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="contact">
+            <h1>Contact Us</h1>
+            <center><p>Feel free to write your thoughts below!</p></center>
+
+            <form action="/submit-contact" method="POST">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+    </main>
+    <div class="footer">
+        <p>&copy; 2024 SkillUp. <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </div>
+</body>
+</html>

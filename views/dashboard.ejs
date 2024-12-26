@@ -3,9 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
+    <title>SkillUp - Level Up Your Skills</title>
+    <link rel="stylesheet" href="/dashboard.css">
 </head>
 <body>
-    <h2>User Dashboard</h2>
+    <header>
+        <div class="logo">SkillUp</div>
+        <div class="pages">
+            <div class="navbar">
+                <a href="/games" class = "underline">Games</a>
+                <a href="/about" class = "underline">About</a>
+                <a href="/contact" class = "underline">Contact Us</a>
+                <a href="/homePage" class = "underline">SignOut</a>
+            </div>
+            <div class="loggedinuser">
+                <h3 id="loggedinuser"><%= loggedinuser %></h3>
+            </div>
+        </div>
+    </header>
+
+    <div class="section"></div>
+   
+    <div class="footer">
+        <p>&copy; 2024 SkillUp. <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </div>
 </body>
 </html>

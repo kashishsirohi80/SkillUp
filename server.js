@@ -66,15 +66,31 @@ app.use(express.static('public'));
 
 // Routes
 app.get('/', (req, res) => {
-    res.render('home');
+    res.render('homePage');
+});
+
+app.get('/homePage', (req, res) => {
+    res.render('homePage');
 });
 
 app.get('/dashboard', (req, res) => {
-    res.render('dashboard', { username: 'omsh00117' });
+    const loggedinuser = 'omsh117';
+    res.render('dashboard', { loggedinuser });
 });
 
-app.get('/home', (req, res) => {
-    res.render('home');
+app.get('/games', (req, res) => {
+    const loggedinuser = 'omsh117';
+    res.render('games', { loggedinuser });
+});
+
+app.get('/about', (req, res) => {
+    const loggedinuser = 'omsh117';
+    res.render('about', { loggedinuser });
+});
+
+app.get('/contact', (req, res) => {
+    const loggedinuser = 'omsh117';
+    res.render('contact', { loggedinuser });
 });
 
 app.get('/login', (req, res) => {
@@ -117,7 +133,9 @@ app.post('/signup', async (req, res) => {
         console.log("New User Details:\n", user);
         console.log(`${user.username} logged in successfully ...\n`);
 
-        return res.status(201).send(`${user.username} registered successfully.`);
+        // return res.status(201).send(`${user.username} registered successfully.`);
+        const loggedinuser = user.username;
+        return res.render('dashboard', { loggedinuser });
     } catch (error) {
         console.error('Error during user registration:', error);
         return res.status(500).send('Internal Server Error during user registration.');
@@ -149,8 +167,10 @@ app.post('/login', async (req, res) => {
         }
 
         console.log(`${existingUser.username} logged in successfully ...\n`);
+        const loggedinuser = existingUser.username;
 
-        return res.status(200).send(`${existingUser.username} logged in successfully.`);
+        // return res.status(200).send(`${existingUser.username} logged in successfully.`);
+        return res.render('dashboard', { loggedinuser });
 
         // Redirect to home after login
         // res.status(201).redirect('/home');
