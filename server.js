@@ -74,22 +74,22 @@ app.get('/homePage', (req, res) => {
 });
 
 app.get('/dashboard', (req, res) => {
-    const loggedinuser = 'omsh117';
+    const loggedinuser = 'omsh00117';
     res.render('dashboard', { loggedinuser });
 });
 
 app.get('/games', (req, res) => {
-    const loggedinuser = 'omsh117';
+    const loggedinuser = 'omsh00117';
     res.render('games', { loggedinuser });
 });
 
 app.get('/about', (req, res) => {
-    const loggedinuser = 'omsh117';
+    const loggedinuser = 'omsh00117';
     res.render('about', { loggedinuser });
 });
 
 app.get('/contact', (req, res) => {
-    const loggedinuser = 'omsh117';
+    const loggedinuser = 'omsh00117';
     res.render('contact', { loggedinuser });
 });
 
