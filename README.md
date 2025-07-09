@@ -1,3 +1,3 @@
 # SkillUp
 
-Website Link - https://skillup-qzon.onrender.com/
+Website Link - https://skillup-m4sh.onrender.com/
